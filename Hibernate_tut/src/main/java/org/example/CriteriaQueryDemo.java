@@ -132,11 +132,11 @@ public class CriteriaQueryDemo {
 
         Root<Student> root =  criteria.from(Student.class);
         criteria.select(root);
-        Predicate p1 = criteriaBuilder.like(root.get("name"),"%j%");
+//        Predicate p1 = criteriaBuilder.like(root.get("name"),"%j%");
         Predicate p2 = criteriaBuilder.equal(root.get("city"),"Gurgaon");
 
         List<Predicate> predicates = new ArrayList<>();
-        predicates.add(p1);
+//        predicates.add(p1);
         predicates.add(p2);
 
         Predicate combinedPredicate = criteriaBuilder.or(predicates.toArray(new Predicate[0]));
@@ -144,6 +144,9 @@ public class CriteriaQueryDemo {
 
         Query<Student> query = session.createQuery(criteria);
         List<Student> studentList = query.getResultList();
+
+        System.out.println();
+        System.out.println();
 
         for(Student student:studentList){
             System.out.println(student.toString());
