@@ -1,0 +1,7 @@
+<configuration>
+
+    <root level="info">
+        <!-- Specify appenders and other configurations if needed -->
+    </root>
+
+</configuration>
