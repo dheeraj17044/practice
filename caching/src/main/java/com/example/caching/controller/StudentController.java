@@ -26,6 +26,12 @@ public class StudentController {
         return new ResponseEntity<>(student,HttpStatus.OK);
     }
 
+    @GetMapping("/course/{roll}")
+    public ResponseEntity<Student> getCourse(@PathVariable String roll) {
+        Student student = studentService.getCourse(Integer.parseInt(roll));
+        return new ResponseEntity<>(student,HttpStatus.OK);
+    }
+
     @PostMapping("/student")
     public ResponseEntity<Object> addStudent(@RequestBody StudentRequestDto studentRequestDto){
         studentService.saveStudent(studentRequestDto);
