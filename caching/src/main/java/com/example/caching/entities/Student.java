@@ -1,15 +1,17 @@
 package com.example.caching.entities;
 
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "student")
+//@Table(name = "student")
 public class Student {
     @Id
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "roll_number")
     private int rollNumber;
     private String name;
     private String city;

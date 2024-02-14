@@ -22,12 +22,12 @@ public class StudentService {
         return studentDao.save(student);
     }
 
-    @Cacheable(value = "student", key = "#roll")
+    @Cacheable(value = "student_cache", key = "#roll")
     public Student getStudent(int roll){
         return studentDao.findById(roll).orElse(null);
     }
 
-    @Cacheable(value = "course", key = "#roll")
+    @Cacheable(value = "student_cache", key = "#roll")
     public Student getCourse(int roll){
         return studentDao.findById(roll).orElse(null);
     }
