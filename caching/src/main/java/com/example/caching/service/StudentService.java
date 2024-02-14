@@ -27,7 +27,7 @@ public class StudentService {
         return studentDao.findById(roll).orElse(null);
     }
 
-    @Cacheable(value = "student_cache", key = "#roll")
+    @Cacheable(value = "course_cache", key = "#roll")
     public Student getCourse(int roll){
         return studentDao.findById(roll).orElse(null);
     }

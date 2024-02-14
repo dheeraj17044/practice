@@ -62,7 +62,7 @@ public class CachingConfig {
         CaffeineCacheManager cacheManager = new CaffeineCacheManager();
 
         // Configure "student_cache" with a TTL of 1 minutes
-        Caffeine<Object, Object> studentCacheBuilder = Caffeine.newBuilder().expireAfterWrite(1, TimeUnit.MINUTES);
+        Caffeine<Object, Object> studentCacheBuilder = Caffeine.newBuilder().expireAfterWrite(2, TimeUnit.MINUTES);
         CaffeineCache studentCache = new CaffeineCache("student_cache", studentCacheBuilder.build());
 
         // Configure "course_cache" with a TTL of 1 minutes
